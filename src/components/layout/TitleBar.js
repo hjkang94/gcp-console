@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Title, Container, Icon } from 'utils/CommonStyle';
+import { Title, Icon } from 'utils/commonStyle';
 import { matchPath } from 'react-router';
 import routes from 'routes/route';
 import { useLocation } from 'react-router-dom';

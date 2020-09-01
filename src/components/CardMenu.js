@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CardItem, MenuIcon } from 'utils/CommonStyle';
+import { CardItem, MenuIcon } from 'utils/commonStyle';
 import { Button } from 'components';
 
 const Card = styled.div`

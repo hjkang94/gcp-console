@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ChipButton, InputText } from 'components';
 import { MdFilterList, MdClear, MdHelp, MdViewWeek } from 'react-icons/md';
@@ -36,7 +36,7 @@ const RightButton = styled.div`
 `;
 
 function TopTable({ name, text }) {
-  const [filter, setFilter] = React.useState(true);
+  const [filter, setFilter] = useState(true);
 
   return (
     <TopTableContainer>

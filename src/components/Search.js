@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { MdHelp } from 'react-icons/md';
 
@@ -28,7 +28,7 @@ const MenuIcon = styled(MdHelp)`
 `;
 
 function Search({ text }) {
-  const [searchText, setSearchText] = React.useState('');
+  const [searchText, setSearchText] = useState('');
 
   const handleChange = event => {
     setSearchText(event.target.value);

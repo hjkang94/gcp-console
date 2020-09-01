@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { NoPaddingContainer, TableContainer, Container } from 'utils/CommonStyle';
+import { NoPaddingContainer, TableContainer, Container } from 'utils/commonStyle';
 import { SubToolbar, Description, Notification, TopTable } from 'components';
 import {
   Table,
@@ -12,13 +12,25 @@ import {
 } from '@material-ui/core';
 import { configurationData } from 'data';
 import { Topbar } from 'components/layout';
+import { allChecked, checked } from 'utils/util';
 
 const THeadContainer = styled(TableHead)`
   background-color: ${props => props.theme.danger};
 `;
 
 function TableComponent() {
-  const [page, setPage] = React.useState(0);
+  const [page, setPage] = useState(0);
+  const [confData, setConfData] = useState([]);
+  const [allData, setAllData] = useState(false);
+
+  useEffect(() => {
+    setConfData(
+      configurationData.map(data => {
+        data.isChecked = false;
+        return data;
+      })
+    );
+  }, []);
 
   const handleChangePage = newPage => {
     setPage(newPage);
@@ -31,7 +43,14 @@ function TableComponent() {
         <THeadContainer>
           <TableRow>
             <TableCell padding="checkbox">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                onChange={e => {
+                  setAllData(!allData);
+                  setConfData(allChecked(confData, e.target.checked));
+                }}
+                checked={allData}
+              ></input>
             </TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Type</TableCell>
@@ -40,10 +59,19 @@ function TableComponent() {
           </TableRow>
         </THeadContainer>
         <TableBody>
-          {configurationData.map(row => (
+          {confData.map(row => (
             <TableRow key={row.name}>
               <TableCell padding="checkbox">
-                <input type="checkbox" />
+                <input
+                  onChange={event => {
+                    if (!event.target.checked) {
+                      setAllData(false);
+                    }
+                    setConfData(checked(confData, row.id, event.target.checked));
+                  }}
+                  type="checkbox"
+                  checked={row.isChecked}
+                ></input>
               </TableCell>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.type}</TableCell>
@@ -76,7 +104,7 @@ const notification = `
 `;
 
 function Configuration() {
-  const [dismiss, setDismiss] = React.useState(true);
+  const [dismiss, setDismiss] = useState(true);
 
   return (
     <Container>

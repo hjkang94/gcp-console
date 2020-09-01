@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MdInfo } from 'react-icons/md';
-import { Icon } from 'utils/CommonStyle';
+import { Icon } from 'utils/commonStyle';
 import { IconButton } from 'components';
 import theme from 'theme';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { lighten } from 'polished';
-import { MenuIcon } from 'utils/CommonStyle';
+import { MenuIcon } from 'utils/commonStyle';
 
 const Container = styled.div`
   width: 240px;

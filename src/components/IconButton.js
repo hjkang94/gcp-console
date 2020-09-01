@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Icon } from 'utils/CommonStyle';
+import { Icon } from 'utils/commonStyle';
 import { lighten } from 'polished';
 
 const IconButtonContainer = styled.button`

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Title, Container } from 'utils/CommonStyle';
+import { Title } from 'utils/commonStyle';
 import { IconButton } from 'components';
 import {
   MdAddBox,
