@@ -39,10 +39,6 @@ const LeftMenuGroup = styled.div`
   margin-left: 20px;
 `;
 
-const CenterMenuGroup = styled.div`
-  display: flex;
-`;
-
 const RightMenuGroup = styled.div`
   border-left: 1px solid ${props => props.theme.border.default};
   margin-right: 10px;
@@ -50,7 +46,74 @@ const RightMenuGroup = styled.div`
   margin-left: auto;
 `;
 
+const items = [
+  {
+    key: 'create',
+    text: 'CREATE',
+    icon: <MdAddBox />,
+  },
+  {
+    key: 'import',
+    text: 'IMPORT',
+    icon: <MdFileDownload />,
+  },
+  {
+    key: 'refresh',
+    text: 'REFRESH',
+    icon: <MdRefresh />,
+  },
+  {
+    key: 'play',
+    text: undefined,
+    icon: <MdPlayArrow />,
+    color: 'gray',
+  },
+  {
+    key: 'stop',
+    text: undefined,
+    icon: <MdStop />,
+    color: 'gray',
+  },
+  {
+    key: 'pause',
+    text: undefined,
+    icon: <MdPause />,
+    color: 'gray',
+  },
+  {
+    key: 'rotate',
+    text: undefined,
+    icon: <MdRotateRight />,
+    color: 'gray',
+  },
+  {
+    key: 'delete',
+    text: 'DELETE',
+    icon: <MdDelete />,
+    color: 'gray',
+  },
+  {
+    key: 'manage',
+    text: 'MANAGE ACCESS',
+    icon: <MdPersonAdd />,
+    align: 'right',
+  },
+  {
+    key: 'show',
+    text: 'SHOW INFO PANEL',
+    icon: <MdAddBox />,
+    align: 'right',
+  },
+  {
+    key: 'learn',
+    text: 'LEARN',
+    icon: <FaGraduationCap />,
+    align: 'right',
+  },
+];
+
 function Topbar({ data }) {
+  const buttons = data ? items.filter(item => data.includes(item.key)) : [];
   const pathname = useLocation().pathname;
   let title = '';
 
@@ -65,23 +128,19 @@ function Topbar({ data }) {
     <TopContainer>
       <Title>{title}</Title>
       <LeftMenuGroup>
-        {data.button.create && <IconButton name="CREATE" icon={<MdAddBox />} />}
-        {data.button.import && <IconButton name="IMPORT" icon={<MdFileDownload />} />}
-        {data.button.refresh && <IconButton name="REFRESH" icon={<MdRefresh />} />}
+        {buttons
+          .filter(button => button.align !== 'right')
+          .map((button, i) => (
+            <IconButton key={i} name={button.text} icon={button.icon} color={button.color} />
+          ))}
       </LeftMenuGroup>
 
-      <CenterMenuGroup>
-        {data.button.play && <IconButton icon={<MdPlayArrow />} color="gray" />}
-        {data.button.stop && <IconButton icon={<MdStop />} color="gray" />}
-        {data.button.pause && <IconButton icon={<MdPause />} color="gray" />}
-        {data.button.rotate && <IconButton icon={<MdRotateRight />} color="gray" />}
-        {data.button.delete && <IconButton name="DELETE" icon={<MdDelete />} color="gray" />}
-      </CenterMenuGroup>
-
       <RightMenuGroup>
-        {data.button.manage && <IconButton name="MANAGE ACCESS" icon={<MdPersonAdd />} />}
-        {data.button.show && <IconButton name="SHOW INFO PANEL" />}
-        {data.button.learn && <IconButton name="LEARN" icon={<FaGraduationCap />} />}
+        {buttons
+          .filter(button => button.align === 'right')
+          .map((button, i) => (
+            <IconButton key={i} name={button.text} icon={button.icon} color={button.color} />
+          ))}
       </RightMenuGroup>
     </TopContainer>
   );

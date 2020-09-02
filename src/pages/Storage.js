@@ -3,7 +3,7 @@ import { ContentContainer, Container } from 'utils/commonStyle';
 import { CardMessage } from 'components';
 import { Topbar } from 'components/layout';
 
-const topData = { button: { refresh: true, delete: true } };
+const topData = ['refresh', 'delete'];
 const data = {
   subTitle: 'Kubernetes Engine',
   title: 'Persistent volume claims',

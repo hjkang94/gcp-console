@@ -11,7 +11,6 @@ function App() {
       <div style={{ height: '100%', display: 'flex' }}>
         <Default items={routes} />
         <Switch>
-          <Route exact path="/" render={() => <Redirect to="/vm" />} />
           {routes.items.map(route =>
             route.items.map((item, i) => (
               <Route

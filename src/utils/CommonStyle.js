@@ -17,13 +17,13 @@ export const Container = styled.div`
 export const ContentContainer = styled.div`
   padding: 20px 30px 0 30px;
   overflow-y: auto;
-  height: 100%;
+  height: calc(100% - 70px);
 `;
 
 export const NoPaddingContainer = styled.div`
   width: 100%;
   overflow-y: auto;
-  height: 100%;
+  height: calc(100% - 120px);
 `;
 
 export const MenuIcon = styled.div`

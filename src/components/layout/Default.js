@@ -35,7 +35,7 @@ const TopMenu = styled.div`
 
 const SideContainer = styled.div`
   overflow-y: auto;
-  height: 100%;
+  height: calc(100% - 50px);
   width: 240px;
 `;
 

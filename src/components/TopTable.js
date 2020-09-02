@@ -35,7 +35,7 @@ const RightButton = styled.div`
   }
 `;
 
-function TopTable({ name, text }) {
+function TopTable({ btnText, inputText }) {
   const [filter, setFilter] = useState(true);
 
   return (
@@ -45,10 +45,10 @@ function TopTable({ name, text }) {
       </Icon>
       {filter && (
         <Button>
-          <ChipButton name={name} setFilter={setFilter} />
+          <ChipButton name={btnText} setFilter={setFilter} />
         </Button>
       )}
-      <InputText placeholder={text} />
+      <InputText placeholder={inputText} />
       <RightButton>
         <span>
           <MdClear />

@@ -10,3 +10,4 @@ export { default as ChipButton } from './ChipButton';
 export { default as TopTable } from './TopTable';
 export { default as InputText } from './InputText';
 export { default as CardMessage } from './CardMessage';
+export { default as Table } from './Table';

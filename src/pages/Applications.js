@@ -3,7 +3,7 @@ import { ContentContainer, Container } from 'utils/commonStyle';
 import { CardMessage } from 'components';
 import { Topbar } from 'components/layout';
 
-const topData = { button: { refresh: true } };
+const topData = ['refresh'];
 const data = {
   subTitle: 'Kubernetes Engine',
   title: 'Applications',

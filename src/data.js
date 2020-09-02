@@ -9,7 +9,7 @@ import React from 'react';
 
 export const vmInstanceData = [
   {
-    id: 'hjkang1',
+    id: '0',
     name: 'gcp-console-test-hjkang',
     zone: 'asia-northeast1-b',
     recommendation: '',
@@ -18,7 +18,7 @@ export const vmInstanceData = [
     externalIp: '222.11.3.111',
   },
   {
-    id: 'hjkang2',
+    id: '1',
     name: 'gcp-console-test',
     zone: 'asia-northeast1-b2',
     recommendation: '',
@@ -27,7 +27,7 @@ export const vmInstanceData = [
     externalIp: '222.11.3.111',
   },
   {
-    id: 'hjkang3',
+    id: '2',
     name: 'gcp-console-test-aaa',
     zone: 'asia-northeast1-b3',
     recommendation: '',
@@ -36,7 +36,7 @@ export const vmInstanceData = [
     externalIp: '222.11.3.111',
   },
   {
-    id: 'hjkang4',
+    id: '3',
     name: 'gcp-console-test-bbb',
     zone: 'asia-northeast1-b4',
     recommendation: '',
@@ -45,7 +45,7 @@ export const vmInstanceData = [
     externalIp: '222.11.3.111',
   },
   {
-    id: 'hjkang5',
+    id: '4',
     name: 'gcp-console-test-ccc',
     zone: 'asia-northeast1-b5',
     recommendation: '',
@@ -85,70 +85,70 @@ export const vmActionData = [
 
 export const configurationData = [
   {
-    id: 'hjkang1',
+    id: '0',
     name: 'hjkang-config-1',
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster1',
   },
   {
-    id: 'hjkang2',
+    id: '1',
     name: 'hjkang-config-2',
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster2',
   },
   {
-    id: 'hjkang3',
+    id: '2',
     name: 'hjkang-config-3',
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster3',
   },
   {
-    id: 'hjkang4',
+    id: '3',
     name: 'hjkang-config-4',
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster4',
   },
   {
-    id: 'hjkang5',
+    id: '4',
     name: 'hjkang-config-5',
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster5',
   },
   {
-    id: 'hjkang6',
+    id: '5',
     name: 'hjkang-config-6',
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster6',
   },
   {
-    id: 'hjkang7',
+    id: '6',
     name: 'hjkang-config-7',
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster7',
   },
   {
-    id: 'hjkang8',
+    id: '7',
     name: 'hjkang-config-8',
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster8',
   },
   {
-    id: 'hjkang9',
+    id: '8',
     name: 'hjkang-config-9',
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster9',
   },
   {
-    id: 'hjkang10',
+    id: '9',
     name: 'hjkang-config-10',
     type: 'Config',
     namespace: 'KHJTEST',
