@@ -22,7 +22,7 @@ function App() {
               />
             ))
           )}
-          <Route render={() => <Redirect to="/vm" />} />
+          <Route render={() => <Redirect to="/compute/instance" />} />
         </Switch>
       </div>
     </ThemeProvider>

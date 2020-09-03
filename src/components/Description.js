@@ -7,16 +7,17 @@ const Container = styled.div`
 `;
 
 const Text = styled.div`
+  color: ${props => (props.color ? props.theme.font.light : 'none')};
   white-space: pre-wrap;
-  font-size: 14px;
-  padding: 10px;
+  font-size: ${props => (props.color ? '12px' : '14px')};
+  padding: 5px;
   line-height: 150%;
 `;
 
-function Description({ text }) {
+function Description({ color, text }) {
   return (
     <Container>
-      <Text>{text}</Text>
+      <Text color={color}>{text}</Text>
     </Container>
   );
 }

@@ -64,8 +64,8 @@ function CardContainer({ data, title }) {
 function CardMenuContainer({ data }) {
   return (
     <CardItem>
-      {data.map(row => (
-        <Li key={row.title}>
+      {data.map((row, i) => (
+        <Li key={i}>
           <div>
             <div>
               <LiIcon>{row.icon}</LiIcon>

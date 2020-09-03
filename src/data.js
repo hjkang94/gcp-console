@@ -7,7 +7,7 @@ import {
 } from 'react-icons/md';
 import React from 'react';
 
-export const vmInstanceData = [
+export const vmInstances = [
   {
     id: '0',
     name: 'gcp-console-test-hjkang',
@@ -55,7 +55,7 @@ export const vmInstanceData = [
   },
 ];
 
-export const vmActionData = [
+export const vmActions = [
   {
     title: 'View Billing Report',
     description: 'View and manage your Compute Engine billing',
@@ -83,7 +83,7 @@ export const vmActionData = [
   },
 ];
 
-export const configurationData = [
+export const configurations = [
   {
     id: '0',
     name: 'hjkang-config-1',
@@ -153,5 +153,143 @@ export const configurationData = [
     type: 'Config',
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster10',
+  },
+];
+
+export const templates = [
+  {
+    id: '0',
+    name: 'hjkang-templates-1',
+    machineType: '2 vCPUs, 4 GB',
+    image: 'gke-00000-gke24-cos-u-11-11111-123-0-v123123-pre',
+    diskType: 'Standard persistent disk',
+    placementPolicy: 'No policy',
+    inUseBy: 'hjkang-default-pool-123123',
+    creationTime: 'Mar 1, 2020, 8:46:14 AM',
+  },
+  {
+    id: '1',
+    name: 'hjkang-templates-2',
+    machineType: '2 vCPUs, 4 GB',
+    image: 'gke-00000-gke24-cos-u-11-11111-123-0-v123123-pre',
+    diskType: 'Standard persistent disk',
+    placementPolicy: 'No policy',
+    inUseBy: 'hjkang-default-pool-123123',
+    creationTime: 'Mar 5, 2020, 8:46:14 AM',
+  },
+  {
+    id: '2',
+    name: 'hjkang-templates-3',
+    machineType: '2 vCPUs, 4 GB',
+    image: 'gke-11111-gke24-cos-u-11-11111-123-0-v123123-pre',
+    diskType: 'Standard persistent disk',
+    placementPolicy: 'No policy',
+    inUseBy: 'hjkang-default-pool-123123',
+    creationTime: 'Mar 10, 2020, 8:46:14 AM',
+  },
+  {
+    id: '3',
+    name: 'hjkang-templates-4',
+    machineType: '2 vCPUs, 4 GB',
+    image: 'gke-22222-gke24-cos-u-11-11111-123-0-v123123-pre',
+    diskType: 'Standard persistent disk',
+    placementPolicy: 'No policy',
+    inUseBy: 'hjkang-default-pool-123123',
+    creationTime: 'Mar 25, 2020, 8:46:14 AM',
+  },
+  {
+    id: '4',
+    name: 'hjkang-templates-5',
+    machineType: '2 vCPUs, 4 GB',
+    image: 'gke-33333-gke24-cos-u-11-11111-123-0-v123123-pre',
+    diskType: 'Standard persistent disk',
+    placementPolicy: 'No policy',
+    inUseBy: 'hjkang-default-pool-123123',
+    creationTime: 'Jun 23, 2020, 8:46:14 AM',
+  },
+  {
+    id: '5',
+    name: 'hjkang-templates-6',
+    machineType: '2 vCPUs, 4 GB',
+    image: 'gke-77777-gke24-cos-u-11-11111-123-0-v123123-pre',
+    diskType: 'Standard persistent disk',
+    placementPolicy: 'No policy',
+    inUseBy: 'hjkang-default-pool-123123',
+    creationTime: 'Mar 30, 2020, 8:46:14 AM',
+  },
+];
+
+export const groups = [
+  {
+    id: '0',
+    name: 'gke-cluste-default-pool-1',
+    zone: 'asia-northeast1-b',
+    instances: 2,
+    template: 'gke-cluste-default-pool-1',
+    groupType: 'Managed',
+    creationTime: 'Jan 17, 2020, 2:51:49 PM',
+    recommendation: '',
+    autoscaling: 'No configuration',
+    inUseBy: 'hjkang-cluster',
+  },
+  {
+    id: '1',
+    name: 'gke-cluste-default-pool-2',
+    zone: 'asia-northeast1-b',
+    instances: 2,
+    template: 'gke-cluste-default-pool-2',
+    groupType: 'Managed',
+    creationTime: 'Jan 17, 2020, 5:51:49 PM',
+    recommendation: '',
+    autoscaling: 'No configuration',
+    inUseBy: 'hjkang-cluster',
+  },
+  {
+    id: '2',
+    name: 'gke-cluste-default-pool-3',
+    zone: 'asia-northeast1-c',
+    instances: 2,
+    template: 'gke-cluste-default-pool-3',
+    groupType: 'Managed',
+    creationTime: 'Jan 17, 2020, 7:51:49 PM',
+    recommendation: '',
+    autoscaling: 'No configuration',
+    inUseBy: 'hjkang-cluster',
+  },
+  {
+    id: '3',
+    name: 'gke-cluste-default-pool-4',
+    zone: 'asia-northeast1-a',
+    instances: 2,
+    template: 'gke-cluste-default-pool-4',
+    groupType: 'Managed',
+    creationTime: 'Jan 17, 2020, 8:51:49 PM',
+    recommendation: '',
+    autoscaling: 'No configuration',
+    inUseBy: 'hjkang-cluster',
+  },
+  {
+    id: '4',
+    name: 'gke-cluste-default-pool-5',
+    zone: 'asia-northeast1-a',
+    instances: 2,
+    template: 'gke-cluste-default-pool-5',
+    groupType: 'Managed',
+    creationTime: 'Jan 17, 2020, 9:51:49 PM',
+    recommendation: '',
+    autoscaling: 'No configuration',
+    inUseBy: 'hjkang-cluster',
+  },
+  {
+    id: '5',
+    name: 'gke-cluste-default-pool-6',
+    zone: 'asia-northeast1-c',
+    instances: 2,
+    template: 'gke-cluste-default-pool-6',
+    groupType: 'Managed',
+    creationTime: 'Jan 17, 2020, 2:51:49 PM',
+    recommendation: '',
+    autoscaling: 'No configuration',
+    inUseBy: 'hjkang-cluster',
   },
 ];

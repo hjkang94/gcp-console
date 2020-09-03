@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ContentContainer, TableContainer, Container } from 'utils/commonStyle';
 import { Search, CardMenu, Table } from 'components';
-import { vmInstanceData, vmActionData } from 'data';
+import { vmInstances, vmActions } from 'data';
 import { MdCheckCircle } from 'react-icons/md';
 import { Topbar } from 'components/layout';
 
@@ -48,11 +48,11 @@ const topData = [
 ];
 
 function VmInstances() {
-  const [instanceData, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     setData(
-      vmInstanceData.map(data => {
+      vmInstances.map(data => {
         data.isChecked = false;
         return data;
       })
@@ -65,9 +65,9 @@ function VmInstances() {
       <ContentContainer>
         <Search text="Filter VM instances" />
         <TableContainer>
-          <Table headers={headers} datas={instanceData} setData={setData} />
+          <Table headers={headers} datas={data} setData={setData} />
         </TableContainer>
-        <CardMenu data={vmActionData} title="Related Actions" />
+        <CardMenu data={vmActions} title="Related Actions" />
       </ContentContainer>
     </Container>
   );

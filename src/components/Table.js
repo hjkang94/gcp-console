@@ -99,8 +99,8 @@ function Tbody(props) {
   const { datas, headers, setAllData, setData } = props;
   return (
     <TableBody>
-      {datas.map(row => (
-        <TableRow key={row.id}>
+      {datas.map((row, i) => (
+        <TableRow key={i}>
           <TableCell padding="checkbox">
             <input
               onChange={event => {

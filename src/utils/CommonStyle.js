@@ -6,7 +6,7 @@ export const Title = styled.div`
   font-weight: bold;
   color: #353535;
   display: flex;
-  min-width: 150px;
+  min-width: 170px;
 `;
 
 export const Container = styled.div`

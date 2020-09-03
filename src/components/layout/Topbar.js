@@ -12,6 +12,7 @@ import {
   MdPause,
   MdRotateRight,
   MdDelete,
+  MdContentCopy,
 } from 'react-icons/md';
 import { FaGraduationCap } from 'react-icons/fa';
 import { matchPath } from 'react-router';
@@ -61,6 +62,11 @@ const items = [
     key: 'refresh',
     text: 'REFRESH',
     icon: <MdRefresh />,
+  },
+  {
+    key: 'copy',
+    text: 'COPY',
+    icon: <MdContentCopy />,
   },
   {
     key: 'play',

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NoPaddingContainer, TableContainer, Container } from 'utils/commonStyle';
 import { SubToolbar, Description, Notification, Table } from 'components';
-import { configurationData } from 'data';
+import { configurations } from 'data';
 import { Topbar } from 'components/layout';
 
 const headers = [
@@ -37,11 +37,11 @@ const notification = `
 
 function Configuration() {
   const [dismiss, setDismiss] = useState(true);
-  const [confData, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     setData(
-      configurationData.map(data => {
+      configurations.map(data => {
         data.isChecked = false;
         return data;
       })
@@ -56,13 +56,7 @@ function Configuration() {
         <Description text={description} />
         {dismiss && <Notification text={notification} dismiss={dismiss} setDismiss={setDismiss} />}
         <TableContainer>
-          <Table
-            headers={headers}
-            datas={confData}
-            setData={setData}
-            topTable={true}
-            paging={true}
-          />
+          <Table headers={headers} datas={data} setData={setData} topTable={true} paging={true} />
         </TableContainer>
       </NoPaddingContainer>
     </Container>
