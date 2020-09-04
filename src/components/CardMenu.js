@@ -4,9 +4,9 @@ import { CardItem, MenuIcon } from 'utils/commonStyle';
 import { Button } from 'components';
 
 const Card = styled.div`
-  margin-top: 80px;
+  margin-top: 30px;
   > div {
-    font-size: 12px;
+    font-size: ${props => props.theme.font.xs};
     margin-bottom: 20px;
   }
 `;
@@ -36,11 +36,11 @@ const LiDescription = styled.div`
 `;
 
 const LiGroup = styled.div`
-  font-size: 12px;
+  font-size: ${props => props.theme.font.xs};
 `;
 
 const LiIcon = styled(MenuIcon)`
-  font-size: 20px;
+  font-size: ${props => props.theme.font.md};
   color: ${props => props.theme.default};
 `;
 

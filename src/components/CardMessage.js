@@ -20,7 +20,7 @@ const CardContainer = styled.div`
 
 const Text = styled.span`
   color: ${props => props.color || props.theme.font.default};
-  font-size: 12px;
+  font-size: ${props => props.theme.font.xs};
   font-weight: 400;
   letter-spacing: normal;
   line-height: 16px;
@@ -29,7 +29,7 @@ const Text = styled.span`
 
 const Title = styled.div`
   color: black;
-  font-size: 24px;
+  font-size: ${props => props.theme.font.xl};
   font-weight: 400;
   letter-spacing: normal;
   line-height: 32px;
@@ -43,7 +43,7 @@ const Button = styled.div`
 
 const MoreButton = styled.a`
   color: ${props => props.theme.default};
-  font-size: 12px;
+  font-size: ${props => props.theme.font.xs};
   margin-left: 5px;
 `;
 

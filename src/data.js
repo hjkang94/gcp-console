@@ -154,6 +154,20 @@ export const configurations = [
     namespace: 'KHJTEST',
     cluster: 'hjkang-cluster10',
   },
+  {
+    id: '10',
+    name: 'hjkang-config-11',
+    type: 'Config',
+    namespace: 'KHJTEST',
+    cluster: 'hjkang-cluster11',
+  },
+  {
+    id: '11',
+    name: 'hjkang-config-12',
+    type: 'Config',
+    namespace: 'KHJTEST',
+    cluster: 'hjkang-cluster12',
+  },
 ];
 
 export const templates = [

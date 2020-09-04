@@ -4,12 +4,7 @@ import { Search, Table, Description } from 'components';
 import { groups } from 'data';
 import { MdCheckCircle } from 'react-icons/md';
 import { Topbar } from 'components/layout';
-import styled from 'styled-components';
 import theme from 'theme';
-
-const DescriptionContainer = styled.div`
-  padding-bottom: 20px;
-`;
 
 const headers = [
   {
@@ -53,8 +48,8 @@ const headers = [
 
 const topData = ['create', 'refresh', 'delete', 'learn'];
 const description = `
-Instance groups are collections of VM instances that use load balancing and
-automated services, like autoscaling and autohealing.
+  Instance groups are collections of VM instances that use load balancing and
+  automated services, like autoscaling and autohealing.
 `;
 
 function InstanceGroups() {
@@ -73,9 +68,7 @@ function InstanceGroups() {
     <Container>
       <Topbar data={topData} />
       <ContentContainer>
-        <DescriptionContainer>
-          <Description color={theme.font.light} text={description} />
-        </DescriptionContainer>
+        <Description color={theme.font.light} text={description} />
         <Search text="Filter resources" />
         <TableContainer>
           <Table headers={headers} datas={data} setData={setData} />

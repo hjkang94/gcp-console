@@ -9,6 +9,11 @@ const theme = {
     success: '#00c752',
     danger: '#797979',
     light: '#868686',
+    xs: '0.8em',
+    sm: '1em',
+    md: '1.2em',
+    lg: '1.4em',
+    xl: '1.6em',
   },
 };
 

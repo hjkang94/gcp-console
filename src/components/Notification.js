@@ -9,7 +9,7 @@ const NotificationContainer = styled.div`
   background-color: ${props => props.theme.danger};
   margin: 10px;
   padding: 20px;
-  font-size: 13px;
+  font-size: ${props => props.theme.font.xs};
   border-radius: 5px;
   display:flex;
 }

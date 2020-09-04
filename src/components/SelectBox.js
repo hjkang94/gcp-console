@@ -7,7 +7,7 @@ const SelectBox = styled.select`
   border: 1px solid #ccc;
   height: 34px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: ${props => props.theme.font.xs};
   color: gray;
 }
 `;

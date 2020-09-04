@@ -9,7 +9,7 @@ const TopTableContainer = styled.div`
   border-top: 1px solid ${props => props.theme.border.default};
   border-bottom: 1px solid ${props => props.theme.border.default};
   display: inline-flex;
-  font-size: 20px;
+  font-size: ${props => props.theme.font.sm};
   width: 100%;
 `;
 

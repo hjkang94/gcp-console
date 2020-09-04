@@ -9,7 +9,7 @@ const ChipContainer = styled.button`
   cursor: pointer;
   height: 23px;
   line-height: 23px;
-  font-size: 13px;
+  font-size: ${props => props.theme.font.xs};
   padding: 0 10px;
   outline: none;
   border: none;

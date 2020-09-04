@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Title = styled.div`
-  font-size: 17px;
+  font-size: ${props => props.theme.font.md};
   padding-left: 20px;
   font-weight: bold;
   color: #353535;
@@ -36,7 +36,7 @@ export const TableContainer = styled.div`
   margin-top: 20px;
   th,
   td {
-    font-size: 12px;
+    font-size: ${props => props.theme.font.xs};
   }
   th {
     font-weight: bold;
@@ -53,7 +53,7 @@ export const CardItem = styled.ul`
 export const TableMenuIcon = styled.span`
   padding-right: 10px;
   color: ${props => props.theme.font.success};
-  font-size: 15px;
+  font-size: ${props => props.theme.font.md};
   position: relative;
   top: 3px;
 `;
@@ -61,7 +61,7 @@ export const TableMenuIcon = styled.span`
 export const Icon = styled.div`
   position: relative;
   top: 2px;
-  font-size: 17px;
+  font-size: ${props => props.theme.font.md};
 `;
 
 export const TopTable = styled.div`

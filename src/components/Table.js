@@ -13,6 +13,10 @@ import { TopTable } from 'components';
 import styled from 'styled-components';
 import theme from 'theme';
 
+const Container = styled.div`
+  padding-bottom: 50px;
+`;
+
 const THeadContainer = styled(TableHead)`
   background-color: ${props => props.color};
 `;
@@ -32,8 +36,78 @@ function TableComponent(props) {
     setPage(0);
   };
 
+  function Thead({ color }) {
+    return (
+      <THeadContainer color={color}>
+        <TableRow>
+          <TableCell padding="checkbox">
+            <input
+              type="checkbox"
+              onChange={e => {
+                setAllData(!allData);
+                setData(
+                  datas.map(item => {
+                    item.isChecked = e.target.checked;
+                    return item;
+                  })
+                );
+              }}
+              checked={allData}
+            ></input>
+          </TableCell>
+          {headers.map((item, i) => (
+            <TableCell style={{ whiteSpace: 'nowrap' }} key={i}>
+              {item.text}
+            </TableCell>
+          ))}
+        </TableRow>
+      </THeadContainer>
+    );
+  }
+
+  function Tbody() {
+    return (
+      <TableBody>
+        {datas.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, i) => (
+          <TableRow key={i}>
+            <TableCell padding="checkbox">
+              <input
+                onChange={event => {
+                  const checked = event.target.checked;
+                  if (!checked) {
+                    setAllData(false);
+                  }
+                  setData(
+                    datas.map(item => {
+                      if (item.id === row.id) {
+                        item.isChecked = checked;
+                      }
+                      return item;
+                    })
+                  );
+                }}
+                type="checkbox"
+                checked={row.isChecked}
+              ></input>
+            </TableCell>
+            {headers.map((item, i) => (
+              <TableCell key={i}>
+                {item.icon && (
+                  <TableMenuIcon>
+                    <MdCheckCircle />
+                  </TableMenuIcon>
+                )}
+                {row[item.key]}
+              </TableCell>
+            ))}
+          </TableRow>
+        ))}
+      </TableBody>
+    );
+  }
+
   return (
-    <div>
+    <Container>
       {topTable && (
         <TopTable btnText="Is system object: False" inputText="Filter secrets and config maps" />
       )}
@@ -59,81 +133,11 @@ function TableComponent(props) {
           page={page}
           onChangePage={handleChangePage}
           rowsPerPage={rowsPerPage}
-          rowsPerPageOptions={[10, 30, 50]}
+          rowsPerPageOptions={[5, 10, 25]}
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       )}
-    </div>
-  );
-}
-
-function Thead(props) {
-  const { allData, datas, headers, setAllData, setData, color } = props;
-  return (
-    <THeadContainer color={color}>
-      <TableRow>
-        <TableCell padding="checkbox">
-          <input
-            type="checkbox"
-            onChange={e => {
-              setAllData(!allData);
-              setData(
-                datas.map(item => {
-                  item.isChecked = e.target.checked;
-                  return item;
-                })
-              );
-            }}
-            checked={allData}
-          ></input>
-        </TableCell>
-        {headers.map((item, i) => (
-          <TableCell key={i}>{item.text}</TableCell>
-        ))}
-      </TableRow>
-    </THeadContainer>
-  );
-}
-
-function Tbody(props) {
-  const { datas, headers, setAllData, setData } = props;
-  return (
-    <TableBody>
-      {datas.map((row, i) => (
-        <TableRow key={i}>
-          <TableCell padding="checkbox">
-            <input
-              onChange={event => {
-                const checked = event.target.checked;
-                if (!checked) {
-                  setAllData(false);
-                }
-                setData(
-                  datas.map(item => {
-                    if (item.id === row.id) {
-                      item.isChecked = checked;
-                    }
-                    return item;
-                  })
-                );
-              }}
-              type="checkbox"
-              checked={row.isChecked}
-            ></input>
-          </TableCell>
-          {headers.map((item, i) => (
-            <TableCell key={i}>
-              {item.icon && (
-                <TableMenuIcon>
-                  <MdCheckCircle />
-                </TableMenuIcon>
-              )}
-              {row[item.key]}
-            </TableCell>
-          ))}
-        </TableRow>
-      ))}
-    </TableBody>
+    </Container>
   );
 }
 
