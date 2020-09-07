@@ -15,7 +15,6 @@ import {
   MdContentCopy,
 } from 'react-icons/md';
 import { FaGraduationCap } from 'react-icons/fa';
-import { matchPath } from 'react-router';
 import routes from 'routes/route';
 import { useLocation } from 'react-router-dom';
 
@@ -124,7 +123,7 @@ function Topbar({ data }) {
   let title = '';
 
   routes.items.forEach(route => {
-    const check = route.items.find(item => matchPath(pathname, item.path));
+    const check = route.items.find(item => pathname === item.path);
     if (check) {
       title = check.name;
     }
