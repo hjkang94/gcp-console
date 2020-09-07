@@ -10,7 +10,7 @@ const InputTextContainer = styled.input`
   width: 210px;
 `;
 
-function InputText({ placeholder, text }) {
+function InputText({ placeholder }) {
   return (
     <div>
       <InputTextContainer placeholder={placeholder} />

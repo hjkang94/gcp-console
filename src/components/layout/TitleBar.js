@@ -36,12 +36,10 @@ function TitleBar() {
   return (
     <TopContainer>
       <GlobalStyle />
-      <div>
-        <Title>
-          <Icon>{title && title.icon}</Icon>
-          <Name>{title && title.name}</Name>
-        </Title>
-      </div>
+      <Title>
+        <Icon>{title && title.icon}</Icon>
+        <Name>{title && title.name}</Name>
+      </Title>
     </TopContainer>
   );
 }
