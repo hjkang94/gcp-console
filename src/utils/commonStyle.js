@@ -7,6 +7,7 @@ export const Title = styled.div`
   color: #353535;
   display: flex;
   min-width: 170px;
+  white-space: nowrap;
 `;
 
 export const Container = styled.div`
