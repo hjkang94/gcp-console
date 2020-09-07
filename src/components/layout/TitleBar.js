@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Title, Icon } from 'utils/commonStyle';
-import { matchPath } from 'react-router';
 import routes from 'routes/route';
 import { useLocation } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+
 const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100%;
@@ -30,7 +30,7 @@ const Name = styled.div`
 function TitleBar() {
   const pathname = useLocation().pathname;
   const title = routes.items.find(route =>
-    route.items.includes(route.items.find(item => matchPath(pathname, item.path)))
+    route.items.includes(route.items.find(item => pathname === item.path))
   );
 
   return (
